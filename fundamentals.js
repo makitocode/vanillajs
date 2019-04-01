@@ -55,7 +55,6 @@ function PassingValueByValue(){
 // PassingValueByValue();
 //#endregion 
 
-
 //#region PRIMITIVE_TYPES
 console.log('\n');
 console.log(':::: Primitive types');
@@ -123,6 +122,92 @@ function SymbolsforFun(){
 // console.log('\n');
 //#endregion
 
+//#region CONTRUCTOR_&_INSTANCE
+console.log('\n');
+console.log(':::: CONSTRUCTOR & INSTANCE');
+console.log('\n');
+
+// Method to create pancake
+let Pancake = function() {
+    this.number = 0;
+    this.bake = function(){
+        console.log('Baking the pancake...');
+        this.number++;
+    }
+}
 
 
+/**
+ * Method to create and test instance of pancake.
+ */
+function Instance(){
+    //instantie pancake maker
+    let pancake = new Pancake();
+    //Bake 3 pancakes
+    pancake.bake();
+    pancake.bake();
+    pancake.bake();
+
+    console.log('number of pancakes -> ', pancake.number);
+    console.log('\n');
+}
+
+/**
+ * Method to get the constructor
+ */
+function getConstructor(){
+    //instantie pancake maker
+    let pancake = new Pancake();
+    console.log('constructor -> ', pancake.constructor);
+    console.log('😱')
+    console.log('😏')
+    console.log('\n');
+}
+
+//Run test
+// Instance();
+// getConstructor();
+//#endregion
+
+//#region SCOPE_&_HOISTING
+console.log('\n');
+console.log(':::: SCOPE & HOISTING');
+console.log('\n');
+
+console.log('---- Global scope ----');
+console.log('Hoisting simply means ”raised” or ”placed on top of”.');
+
+//functions
+myHoistingFunction(); //works when 'use strict' has disable 😱
+// myfunction(); // doesn't work. this is fine 👍🏼
+
+function myHoistingFunction(){
+    console.log('myHoistingFunction has been hoisted.');
+}
+var myfunction = function(){
+    console.log('myfunction has been hoisted.');
+}
+
+var apple = 1;
+console.log("var apple = 1");
+let appleII = 2;
+console.log("let appleII = 2");
+
+{
+    
+    // block-scope
+    console.log('---- Block scope ----');
+    var elisa = 'Macintosh';
+    console.log("var elisa = 'Macintosh'");
+    let macbook = 'macbook';
+    console.log("var macbook = 'macbook'");
+
+    // Here apple is defined in global scope. But it can also be accessed from an inner
+    console.log('apple -> ', apple);
+    console.log('appleII -> ', appleII);
+}
+console.log('elisa -> ', elisa);
+
+// console.log('macbook ->', macbook); //throws error macbook is not defined
+console.log('\n');
 // export { PassingValueByReference, PassingValueByValue}
