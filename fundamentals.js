@@ -208,6 +208,35 @@ console.log("let appleII = 2");
 }
 console.log('elisa -> ', elisa);
 
+
+
+let arrayList = [2,7,5,1,4,6,3];
+console.log(arrayList.sort());
+
+
+function vowelsAndConsonants(s) {
+    let vowels = [];
+    let letters = [];
+    s.split(('')).map((vowel) => {
+      vowel === ('a' || 'e' || 'i' || 'o' || 'u') ? vowels.push(vowel) : letters.push(vowel);
+    })
+    console.log(vowels);
+    console.log(letters);
+}
+
+const s = 'javascript';
+    
+vowelsAndConsonants(s);
+
+
+
+
+
+  
+
+
+
+
 // console.log('macbook ->', macbook); //throws error macbook is not defined
 console.log('\n');
 // export { PassingValueByReference, PassingValueByValue}
