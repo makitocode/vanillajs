@@ -40,7 +40,6 @@ const indexed = pets.reduce((accum, el) => ({
 }), {});
 console.log(indexed);
 //console.log(indexed['Fito']);
-
 //How to filter using indexed dictionary and filter array obj
 //console.log(filterPet.filter( p => indexed[p.name]));
 console.log( filterPet.map(el => indexed[el.name]) );

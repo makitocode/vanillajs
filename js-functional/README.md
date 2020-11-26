@@ -23,12 +23,12 @@ There are a lot of ideas in the innocent looking definition above which all need
 - **Avoid side effects:**
   A side effect is any application state change that is observable outside the called function other than its return value. Side effects include:
 
-      * Modifying any external variable or object property (e.g., a global variable, or a variable in the parent function scope chain)
-      * Logging to the console
-      * Writing to the screen
-      * Writing to a file
-      * Writing to the network
-      * Triggering any external process
-      * Calling any other functions with side-effects
+  - Modifying any external variable or object property (e.g., a global variable, or a variable in the parent function scope chain)
+  - Logging to the console
+  - Writing to the screen
+  - Writing to a file
+  - Writing to the network
+  - Triggering any external process
+  - Calling any other functions with side-effects
 
 > In JavaScript, it’s important not to confuse const, with immutability. const creates a variable name binding which can’t be reassigned after creation. const does not create immutable objects. You can’t change the object that the binding refers to, but you can still change the properties of the object, which means that bindings created with const are mutable, not immutable.
