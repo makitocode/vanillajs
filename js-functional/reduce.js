@@ -18,32 +18,50 @@ const pets = [
 ];
 //get total ages
 const totalAges = pets.reduce((accum, curEl) => accum + curEl.age, 0);
-console.log(totalAges);
+//console.log(totalAges);
 
 
 //Also, reduce is a great Solution 
 //when we have filter a collection 
 //with other collection.
 const filterPet = [
-    { name: 'Fito' },
-    { name: 'Jero'}
+    { name: 'Julieta' },
+    //{ name: 'Jero'}
 ]
 const el = pets.filter(pet =>
     filterPet.find(fil => pet.name === fil.name)
 );
-//console.log(el);
+console.log([...filterPet, ...el.map((item)=> item.name = 'New Name')]);
 
-//Indexed an array
-const indexed = pets.reduce((accum, el) => ({
-    ...accum,
-    [el.name]: el
-}), {});
-//console.log(indexed['Lilo']);
-//console.log(indexed['Fito']);
-//How to filter using indexed dictionary and filter array obj
-//console.log(filterPet.filter( p => indexed[p.name]));
-console.log( filterPet.map(el => indexed[el.name]) );
+// //Indexed an array
+// const indexed = pets.reduce((accum, el) => ({
+//     ...accum,
+//     [el.name]: el
+// }), {});
+// //console.log(indexed['Lilo']);
+// //console.log(indexed['Fito']);
+// //How to filter using indexed dictionary and filter array obj
+// //console.log(filterPet.filter( p => indexed[p.name]));
+// console.log( filterPet.map(el => indexed[el.name]) );
 
-let str = "puzzle";
-let res = str.split('');
-console.log(res)
+// let str = "puzzle";
+// let res = str.split('');
+// //console.log(res)
+
+
+
+// //Reduce with empty list
+// const installment = null;
+
+// try {
+//     if(installment.installmentInfo){
+//         let response = installment.installmentInfo?.reduce(
+//             (accum, currentVal) =>
+//               accum.noOfInstallments > currentVal.noOfInstallments ? accum : currentVal
+//         );
+//         console.log(response);
+//     }
+        
+// } catch (error) {
+//     console.log(error);
+// }
