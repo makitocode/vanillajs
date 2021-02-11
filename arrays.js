@@ -61,5 +61,15 @@ const servicesToSave = services.reduce((accum, el, index) => {
  */
 
 const arr1 = [{ id: 1 , name: "uno" },{ id: 99, name: "dos" }, { id: 99, name: "tres" }];
-console.log([].slice(0, 1));
-console.log([].sort((a,b) => a - b).find(el => el));
+console.log([].slice(0, 1)); //[]
+console.log([].sort((a,b) => a - b).find((el, index) => index == 0));//undefined
+console.log([].sort((a, b) => a - b).slice(0, 1));// []
+
+console.log(arr1.slice(0, 1));
+//[ { id: 1, name: 'uno' } ]
+console.log(arr1.sort((a, b) => a - b).find((el, index) => index == 0));
+//{ id: 1, name: 'uno' }
+console.log(arr1.sort((a, b) => a - b).filter((el, index) => index == 0));
+//[ { id: 1, name: 'uno' } ]
+console.log(arr1.sort((a, b) => a - b).slice(0, 1));
+//[ { id: 1, name: 'uno' } ]
