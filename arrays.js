@@ -73,3 +73,38 @@ console.log(arr1.sort((a, b) => a - b).filter((el, index) => index == 0));
 //[ { id: 1, name: 'uno' } ]
 console.log(arr1.sort((a, b) => a - b).slice(0, 1));
 //[ { id: 1, name: 'uno' } ]
+
+console.log('------------------ GreatMinds examples -----------------');
+const oldCustomizations = [
+    { componentId: 1, content: '1 Loremp Ipsum Dolor 1' },
+    { componentId: 2, content: '2 Loremp Ipsum Dolor 2' }
+]
+const currentCustomizations = [
+    { componentId: 3, content: '3 Loremp Ipsum Dolor 3'}
+]
+const customizationsToSave = oldCustomizations.reduce((accum, el, index) => {
+    const exists = currentCustomizations.find(cust => cust.componentId === el.componentId);
+    console.log(exists);
+    if (exists) {
+        accum.push(exists);
+    } else {
+        accum.push(el);    
+    } 
+    return accum;
+}, []);
+
+console.log(customizationsToSave);
+
+// let intersection = currentCustomizations.filter(current => oldCustomizations.findIndex(old => old.componentId === current.componentId) > -1);
+// console.log(intersection);
+// if (intersection.length <= 0) {
+//     //If both arrays are different
+//     const unifyCustomizations = [ ...oldCustomizations, ...currentCustomizations ]
+//     console.log(unifyCustomizations);
+// } else {
+//     //.......... falta esto.
+//     console.log(intersection);
+
+    
+// }
+
