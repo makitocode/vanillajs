@@ -108,3 +108,14 @@ console.log(customizationsToSave);
     
 // }
 
+const slides = [
+    // { id: 1, name: 'one'},
+    // { id: 2, name: 'two', hideFromStudent: true }
+];
+if (slides.length > 0) {
+    console.log('Array con contenido');
+} else {
+    console.log('Array sin contenido');
+}
+
+console.log(`HideFromStudents`, slides.every(({ hideFromStudent }) => hideFromStudent));
